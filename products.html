@@ -12,6 +12,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style type:"text/css"> BODY { background: repeating-linear-gradient(90deg, #bae1ff, #bae1ff 100px, #E6D1F2 100px, #E6D1F2 200px, #ffb3ba 200px, #ffb3ba 300px, #ffdfba 300px, #ffdfba 400px, #ffffba 400px, #ffffba 500px, #baffc9 500px, #baffc9 600px); height: 100%;} </style>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -24,13 +25,25 @@
       </div>
     </nav>
     <div class="container p-5">
-      <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 22/08/2021) y Entrega 2 (Fecha de entrega: 05/09/2021).</p>
-        <hr>
-        <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-      </div>
-    </div>
+      <div class="alert alert-danger rectangulo" style="position: relative; width:auto; top: 0;">
+        <h4 class="alert-heading lista_de_productos">Lista de productos</h4>
+
+<table class="tablilla">
+  <thead >
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Costo</th>
+        <th>Recuento de venta</th>
+        <th>Foto del producto</th>
+    </tr>
+  </thead>
+  <tbody id="data1">
+  </tbody>
+</table>
+</div>
+</div>
+
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">

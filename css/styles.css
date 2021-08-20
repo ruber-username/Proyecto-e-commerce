@@ -139,3 +139,115 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.rectangulo{
+  background-color: #343a40;
+  box-sizing: border-box;
+}
+
+.lista_de_productos{
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Raleway', serif;
+  color: white;
+  font-weight: normal;
+  }
+
+.tablilla{
+  background-color: white;
+  border: 10px;
+  font: serif;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+#data1 img{
+  width: 300px;
+  height: 200px;
+  border: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+th{
+  font: serif;
+  font-weight: lighter;
+  color: white;
+  text-align: center;
+  border:5px;
+  background-color: #343a40;
+}
+
+td{
+  font: serif;
+  font-weight: lighter;
+  text-align: center;
+  color: black;
+  padding: 30px;
+}
+
+tr:nth-of-type(1){
+  transition-duration: 0.4s;
+}
+
+tr:nth-of-type(1):hover{
+  background: linear-gradient(30deg, rgba(253,45,45,1) 0%, rgba(247,216,216,0.46262254901960786) 100%);
+}
+
+tr:nth-of-type(2){
+  transition-duration: 0.4s;
+}
+
+tr:nth-of-type(2):hover{
+  background: linear-gradient(30deg, rgba(253,195,45,1) 0%, rgba(246,247,216,0.46262254901960786) 100%);
+}
+
+tr:nth-of-type(3){
+  transition-duration: 0.4s;
+}
+
+tr:nth-of-type(3):hover{
+  background: linear-gradient(30deg, rgba(70,253,45,1) 0%, rgba(217,247,216,0.46262254901960786) 100%);
+}
+
+tr:nth-of-type(4){
+  transition-duration: 0.4s;
+}
+
+tr:nth-of-type(4):hover{
+  background: linear-gradient(30deg, rgba(45,189,253,1) 0%, rgba(216,240,247,0.46262254901960786) 100%);
+}
+
+tr:nth-of-type(5){
+  transition-duration: 0.4s;
+}
+
+.invalid {
+  background-color: rgb(245, 171, 171);
+  color: white;
+}
+
+#loginform{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+#loginform h4{
+  font-size: 210%;
+}
+
+#loginidea{
+  background: repeating-linear-gradient(45deg, #bae1ff, #bae1ff 100px, #E6D1F2 100px, #E6D1F2 200px, #ffb3ba 200px, #ffb3ba 300px, #ffdfba 300px, #ffdfba 400px, #ffffba 400px, #ffffba 500px, #baffc9 500px, #baffc9 600px); height: 100%;
+}
+
+#botón{
+  color: darkblue;
+  background-color: rgb(196, 196, 250);
+}
+#botón:hover{
+  background-color: rgb(233, 101, 123);
+  color: white;
+}
+
