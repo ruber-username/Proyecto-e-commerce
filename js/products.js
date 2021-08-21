@@ -13,6 +13,7 @@ getJSONData(PRODUCTS_URL).then(function(resultObj){
 function lista_de_productos(url){
 
     document.getElementById("data1").innerHTML= "";
+    
     fetch(url)
     .then(respuesta => respuesta.json())
     .then(datos =>{
