@@ -22,13 +22,13 @@ function lista_de_productos(url){
         {
             let imagen="";
 
-            if(i===1){
+            if(i===0){
                 imagen='<img src="img/prod1.jpg">';
             }else{
-                if(i===2){
+                if(i===1){
                     imagen='<img src="img/prod2.jpg">';
                 }else{
-                    if(i===3){
+                    if(i===2){
                         imagen='<img src="img/prod3.jpg">';
                     }else{
                         imagen='<img src="img/prod4.jpg">';
