@@ -42,18 +42,27 @@
 
 
 <body class="text-center">
-  <form id="loginform">
+  <div id="loginform">
   <div class="container p-5" >
     <div class="alert alert-danger" id="loginidea" style="position: relative; width:auto; top: 0;">
       <h4>Inicio de usuario</h4>
-      <p><input type="email" name="email" id="email" placeholder="Tu email"></p>
+      <p><input type="text" name="email" id="email" placeholder="Tu email"></p>
       <p><input type="password" name="contraseña" id="contraseña" placeholder="Tu contraseña"></p>
       <br>
-      <p><input type="button" id="botón" value="Iniciar sesión"></p>
+      <p><input type="button" id="botón" value="Iniciar sesión" onclick="datos_guardados()"></p>
 
     </div>
   </div>
-</form>
+</div>
+<script>
+function datos_guardados(){
+  let misdatos ={
+      email: document.getElementById("email").value
+  };
+  let misdatos_json = JSON.stringify(misdatos);
+  localStorage.setItem("misdatos", misdatos_json);
+}
+</script>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>

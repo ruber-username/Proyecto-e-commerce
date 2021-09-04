@@ -28,6 +28,17 @@
       <div class="alert alert-danger rectangulo" style="position: relative; width:auto; top: 0;">
         <h4 class="alert-heading lista_de_productos">Lista de productos</h4>
 
+<input type="number" placeholder="Precio máximo" id="preciomax">
+<input type="number" placeholder="Precio mínimo" id="preciomin">
+<button id="filtrar" class="botonfilt">Filtrar!</button>
+<button id="borrar" class="botonfilt">Borrar</button>
+<button id="precio_asciende" class="botonfilt">Ver los más baratos</button>
+<button id="precio_desciende" class="botonfilt">Ver los más caros</button>
+<button id="relevancia_descendiente" class="botonfilt">Ver los más vendidos</button>
+<br>
+<input type="search" id="buscador_marca" placeholder="Nombre..."><br>
+<input type="search" id="buscador_desc" placeholder="Descripción...">
+
 <table class="tablilla">
   <thead >
     <tr>
@@ -38,11 +49,12 @@
         <th>Foto del producto</th>
     </tr>
   </thead>
-  <tbody id="data1">
+  <tbody id="contenido">
   </tbody>
 </table>
 </div>
 </div>
+
 
     <footer class="text-muted bg-light">
       <div class="container">
