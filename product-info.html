@@ -13,7 +13,9 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-</head>
+  <style type:"text/css"> BODY { background: repeating-linear-gradient(90deg, #bae1ff, #bae1ff 100px, #E6D1F2 100px, #E6D1F2 200px, #ffb3ba 200px, #ffb3ba 300px, #ffdfba 300px, #ffdfba 400px, #ffffba 400px, #ffffba 500px, #baffc9 500px, #baffc9 600px); height: 100%;} </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -26,13 +28,35 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+    <div class="alert alert-danger rectangulo texto" style="position: relative; width:auto; top: 0;">
+        <div id="modelo">
+        </div>
+<div id="fotos_del_auto" style="position: fixed; right: 160px; top: 250px; "></div>
+</div></div>
+
+<div class="container p-5">
+  <div class="alert alert-danger rectangulo texto" style="position: relative; width:auto; top: 0;">
+  <div id="comentarios_aqui"></div>
+  <p id="score"></p>
+
+<p>Coloca un comentario y puntúa:</p>
+<textarea style="resize: none;" id="comentar" rows="4" cols="100"></textarea><br>
+<div id="corazones"></div>
+<input type="submit" value="Enviar" onclick="guardar_el_comentario(); mostrando_comentario();" style="background-color: rgb(255, 213, 220);">
+  </div> </div>
+
+
+  <script>
+    function guardar_el_comentario(){
+      let micoment ={
+          email: document.getElementById("comentar").value
+      };
+      let micoment_json = JSON.stringify(micoment);
+      localStorage.setItem("micoment", micoment_json);
+    }
+    </script>
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -54,6 +78,10 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

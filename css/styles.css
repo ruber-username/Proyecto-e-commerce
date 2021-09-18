@@ -258,3 +258,55 @@ tr:nth-of-type(5){
 .botonfilt:hover{
 background-color: #E6D1F2;
 }
+
+.texto {
+  font: serif;
+  font-weight: lighter;
+  color: white;
+  border:5px;
+  background-color: #343a40;
+}
+
+#fotos_del_auto{
+  width: 450px;
+  height: 400px;
+  border: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  
+}
+
+#comentarios{
+background-color: #baffc9;
+}
+
+.heart-rating {
+  direction: rtl;
+  display: inline-block;
+  padding: 20px
+}
+
+.heart-rating input[type=radio] {
+  display: none
+}
+
+.heart-rating label {
+  color: rgb(192, 133, 169);
+  font-size: 50px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.heart-rating label:hover,
+.heart-rating label:hover ~ label,
+.heart-rating input[type=radio]:checked ~ label {
+  color: #ff4444
+}
+
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css");
+i[class^=icono-]:after{font: normal normal 30px FontAwesome; color:#ff4444;}
+.icono-1:after{content:"\f004\f08a\f08a\f08a\f08a";}
+.icono-2:after{content:"\f004\f004\f08a\f08a\f08a";}
+.icono-3:after{content:"\f004\f004\f004\f08a\f08a";}
+.icono-4:after{content:"\f004\f004\f004\f004\f08a";}
+.icono-5:after{content:"\f004\f004\f004\f004\f004";}

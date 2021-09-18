@@ -41,9 +41,10 @@ contenido += `
 <td>`+ auto.description +`</td>
 <td>`+ auto.cost + ` ` + auto.currency +`</td>
 <td>`+ auto.soldCount +`</td>
-<td>`+ '<img src="' +auto.imgSrc +'" alt="Foto de auto"/ height="250px">' +`</td>
+<td>`+ '<img src="' +auto.imgSrc +'" alt="Foto de auto" height="250px">' + ` ` + '<button onclick="window.location=`product-info.html`"> Ver auto! </button>' + `</td>
 </tr>
 `;
+ 
     }}
 document.getElementById("contenido").innerHTML = contenido;
 }
