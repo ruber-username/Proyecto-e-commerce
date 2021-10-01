@@ -15,10 +15,37 @@ verAuto(automovil); }});
                 comentarios = resultObj.data;
     verComent(comentarios);
     }})
+    getJSONData(PRODUCTS_URL).then(function (resultObj){
+      if (resultObj.status === "ok"){
+          relacionados = resultObj.data;
+          relacion(relacionados);
+}})
 });
 
 var automovil = [];
 var comentarios = [];
+var relacionados = [];
+
+
+function relacion(array){
+var primero = automovil.relatedProducts[0];
+var segundo = automovil.relatedProducts[1];
+let relleno="";
+for(let i = 0; i < array.length; i++){
+if (i == primero || i == segundo){
+  let relacionado = array[i];
+  relleno +=
+  `
+  <div id="recuadrito">`+ '<img src="' + relacionado.imgSrc +'" alt="Foto de auto recomendado" height="100px" onclick="window.location=`product-info.html`" style="cursor: pointer;">'
+  + ' ' + relacionado.name + `<br>`
+  + relacionado.cost
+  + relacionado.currency + `</div>
+  <br>
+  `
+document.getElementById("prod_rel").innerHTML = relleno;
+}
+}}
+
 function verAuto(array){
                 let relleno="";
             relleno += `
@@ -29,14 +56,15 @@ function verAuto(array){
             ${array.currency}<br><br>
             <p> Recuento de venta: ${array.soldCount} </p><br>
             <p> Categoría: ${array.category} </p><br>
-            <p> Productos relacinados: ${array.relatedProducts} </p><br>
+            <p> Productos relacinados:  </p><br>
             </div>
             `;
-            lasfotos();
             
+            lasfotos();
             document.getElementById("modelo").innerHTML = relleno;
 
 }
+ 
 
 function lasfotos(){
     let fotos = "";
@@ -85,9 +113,9 @@ document.getElementById("comentarios_aqui").innerHTML = interior;
     }
 }
 
-//estrellas
+//corazones
 
-addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("corazones").innerHTML =`
         <div class="heart-rating">
         <input id="heart-5" type="radio" name="rating" value="5"/>
@@ -121,9 +149,8 @@ addEventListener("DOMContentLoaded", function(e){
 //extra: agregar el comentario
 
 function mostrando_comentario(){
-array_sin_nada = [];
-comentario_objeto = {};
 var texto = document.getElementById("comentar").value;
+var radios = $('input[name="rating"]:checked').val();
 
 const date = new Date;
 var año = date.getFullYear();
@@ -135,15 +162,11 @@ var segundos = date.getSeconds();
 
 let correcta_fecha = año + '-' + mes + '-' + dia + ' ' + hora + ':' + minutos + ':' + segundos;
 
-localStorage.getItem("micoment")
-  micoment_json = localStorage.getItem("micoment");
-  micoment = JSON.parse(micoment_json);
-
 let elcomentario ={
 user:"Usted",
 description: texto,
 dateTime: correcta_fecha,
-score: "4"
+score: radios
 }
 
 comentarios.push(elcomentario);

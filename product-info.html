@@ -25,13 +25,15 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block usuario_mail" href=""></a>
     </div>
   </nav>
   <div class="container p-5">
     <div class="alert alert-danger rectangulo texto" style="position: relative; width:auto; top: 0;">
         <div id="modelo">
-        </div>
-<div id="fotos_del_auto" style="position: fixed; right: 160px; top: 250px; "></div>
+          
+        </div><div id="prod_rel"></div>
+<div id="fotos_del_auto" style="position: fixed; right: 60px; top: 280px; "></div>
 </div></div>
 
 <div class="container p-5">
@@ -42,20 +44,8 @@
 <p>Coloca un comentario y puntúa:</p>
 <textarea style="resize: none;" id="comentar" rows="4" cols="100"></textarea><br>
 <div id="corazones"></div>
-<input type="submit" value="Enviar" onclick="guardar_el_comentario(); mostrando_comentario();" style="background-color: rgb(255, 213, 220);">
+<input type="submit" value="Enviar" onclick=" mostrando_comentario(); window.localStorage.removeItem('micomment');" style="background-color: rgb(255, 213, 220);">
   </div> </div>
-
-
-  <script>
-    function guardar_el_comentario(){
-      let micoment ={
-          email: document.getElementById("comentar").value
-      };
-      let micoment_json = JSON.stringify(micoment);
-      localStorage.setItem("micoment", micoment_json);
-    }
-    </script>
-
 
   <footer class="text-muted">
     <div class="container">
@@ -78,6 +68,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/datos.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

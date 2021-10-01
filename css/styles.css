@@ -268,8 +268,8 @@ background-color: #E6D1F2;
 }
 
 #fotos_del_auto{
-  width: 450px;
-  height: 400px;
+  width: 630px;
+  height: 580px;
   border: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -310,3 +310,20 @@ i[class^=icono-]:after{font: normal normal 30px FontAwesome; color:#ff4444;}
 .icono-3:after{content:"\f004\f004\f004\f08a\f08a";}
 .icono-4:after{content:"\f004\f004\f004\f004\f08a";}
 .icono-5:after{content:"\f004\f004\f004\f004\f004";}
+
+#autoimg:hover{
+  transform: scale(1.10);
+}
+
+#recuadrito{
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(173,173,255,1) 35%, rgba(52,58,64,1) 100%);
+padding: 10px 10px 10px;
+border-radius: 10px;
+color: black;
+font-weight: 700;
+width: 300px;
+}
+
+#recuadrito:hover{
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,173,173,1) 35%, rgba(52,58,64,1) 100%);
+}
