@@ -14,7 +14,7 @@ function datos_recuperados(){
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="cart.html">Mi carrito</a>
-              <a class="dropdown-item" href="#">Mi perfil</a>
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="index.html" onclick="window.localStorage.removeItem('misdatos');">Cerrar Sesión</a>
             </div>

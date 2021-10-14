@@ -8,19 +8,23 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj){
         if (resultObj.status === "ok"){
             automovil = resultObj.data;
-verAuto(automovil); }});
+verAuto(automovil); }
             
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj){
             if (resultObj.status === "ok"){
                 comentarios = resultObj.data;
     verComent(comentarios);
-    }})
+    }
     getJSONData(PRODUCTS_URL).then(function (resultObj){
       if (resultObj.status === "ok"){
           relacionados = resultObj.data;
           relacion(relacionados);
-}})
+}
+    
 });
+});
+    });
+  });
 
 var automovil = [];
 var comentarios = [];
@@ -36,10 +40,10 @@ if (i == primero || i == segundo){
   let relacionado = array[i];
   relleno +=
   `
-  <div id="recuadrito">`+ '<img src="' + relacionado.imgSrc +'" alt="Foto de auto recomendado" height="100px" onclick="window.location=`product-info.html`" style="cursor: pointer;">'
-  + ' ' + relacionado.name + `<br>`
+  <div class="p-3 mb-2 bg-transparent text-dark" id="recuadrito" onclick="window.location='product-info.html'" style="cursor: pointer;">`+ '<img src="' + relacionado.imgSrc +'" alt="Foto de auto recomendado" height="100px">'
+  + `<p >` +relacionado.name + `<br>` +  
   + relacionado.cost
-  + relacionado.currency + `</div>
+  + relacionado.currency + `</p>` +`</div>
   <br>
   `
 document.getElementById("prod_rel").innerHTML = relleno;
@@ -53,10 +57,10 @@ function verAuto(array){
             <h1 style= "text-align: center;">${array.name}</h1><br>
             ${array.description}<br><br>
             <p> Precio: ${array.cost }
-            ${array.currency}<br><br>
-            <p> Recuento de venta: ${array.soldCount} </p><br>
-            <p> Categoría: ${array.category} </p><br>
-            <p> Productos relacinados:  </p><br>
+            ${array.currency}<br>
+            <p> Recuento de venta: ${array.soldCount} </p>
+            <p> Categoría: ${array.category} </p>
+            <p> Productos relacinados:  </p>
             </div>
             `;
             

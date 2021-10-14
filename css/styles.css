@@ -327,3 +327,21 @@ width: 300px;
 #recuadrito:hover{
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,173,173,1) 35%, rgba(52,58,64,1) 100%);
 }
+
+.carritoimg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 210px;
+  height: 190px;
+  border-radius: 50px;
+}
+
+.info_final{
+  color: white;
+  font-size: 20px;
+}
+
+.el_boton{
+  width: 100%;
+}
