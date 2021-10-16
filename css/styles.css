@@ -332,16 +332,17 @@ width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 210px;
-  height: 190px;
+  width: 170px;
+  height: 150px;
   border-radius: 50px;
 }
 
 .info_final{
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .el_boton{
   width: 100%;
+  height: 30%;
 }
