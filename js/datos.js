@@ -16,12 +16,14 @@ function datos_recuperados(){
               <a class="dropdown-item" href="cart.html">Mi carrito</a>
               <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="index.html" onclick="window.localStorage.removeItem('misdatos');">Cerrar Sesión</a>
+              <a class="dropdown-item" href="index.html" onclick="window.localStorage.removeItem('misdatos'); window.localStorage.removeItem('datos_del_usuario');">Cerrar Sesión</a>
             </div>
           </div>
             `
         }
 
+        var nido2 = document.getElementById("validationCustomUsername");
+        nido2.value = misdatos.email;
 
 
     } else {

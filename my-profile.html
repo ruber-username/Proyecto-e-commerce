@@ -13,6 +13,10 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
   <style>
+    BODY{
+      background-image: url("img/fondocute.jpg");
+    }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -44,11 +48,75 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="alert alert-danger rectangulo texto" role="alert" style="position: relative; width:auto; top: 0;">
+      
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" id="validationCustom01" required disabled>
+                <div class="invalid-feedback">
+                  <i>Por favor establece tu nombre!</i>
+                </div><br>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Apellido: </label>
+                <input type="text" class="form-control" id="validationCustom02" required disabled>
+                <div class="invalid-feedback">
+                  <i>Por favor establece tu apellido!</i>
+                </div><br>
+              </div>
+              <div class="col-md-2">
+                <label for="validationCustom03" class="form-label">Edad: </label>
+                <input type="number" class="form-control" id="validationCustom03" min="18" required disabled>
+                <div class="invalid-feedback">
+                  <i>Por favor establece tu edad!</i>
+                </div><br>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustomUsername" class="form-label">E-mail: </label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">@</span>
+                  <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" disabled>
+                  </div><br>
+                </div>
+              <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">Teléfono celular: </label>
+                <input type="tel" class="form-control" id="validationCustom04" pattern="[0-9]{9}" disabled>
+                <br>
+              </div>
+              <div class="col-8">
+      
+                <button class="btn btn-warning" id="modificar" type="button"
+                onclick="quitamos_disabled(); 
+                document.getElementById('actualizar').style.display='block';
+                document.getElementById('modificar').style.display='none';
+                document.getElementById('cambiazo').style.display='block'
+                "
+                >Modificar datos</button>
+
+                <button style="display:none;" id="actualizar" class="btn btn-success" type="submit" onclick="datos_del_usuario(); foto_perfil();">Actualizar datos</button>
+              </div>
+            </form>
+
+          </div>
+          <div class="col-sm-3"><br>
+            <img src="https://i.ibb.co/sJ04F7C/gatito.jpg" alt="default-usuario" id="imgperfil" width="200px" length="200px" class="img-fluid" style="border-radius: 30%"/>
+          </div>
+        </div>
+
+        <div id="cambiazo" style="display: none;">
+      <br>Cambiar foto de perfil:
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile" onchange="foto_perfil(); this.nextElementSibling.innerText = 'Seleccionado ' + this.files[0].name">
+          <label class="custom-file-label" for="customFile">Seleccionar Archivo</label>
+        </div>
+</div></div>
+
     </div>
   </div>
   <footer class="text-muted bg-light">

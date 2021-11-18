@@ -36,13 +36,13 @@ let auto = array[i];
     (buscar2 === undefined || auto.description.toLowerCase().includes(buscar2))){
 
 contenido += `
-<tr>
-<td>`+ auto.name +`</td>
-<td>`+ auto.description +`</td>
-<td>`+ auto.cost + ` ` + auto.currency +`</td>
-<td>`+ auto.soldCount +`</td>
-<td>`+ '<img src="' +auto.imgSrc +'" alt="Foto de auto" height="250px" onclick="window.location=`product-info.html`" style="cursor: pointer;" id="autoimg">'+ `</td>
-</tr>
+<div class="col-md-6 col-sm-12 prueba">
+<div>${auto.name}</div>
+<div class="lead" style="font-size: 17px;">${auto.description}</div>
+<div>${auto.cost} ${auto.currency}</div>
+<div> Aún quedan ${auto.soldCount}</div><br>
+<div>`+ '<img src="' + auto.imgSrc +'"  class="img-fluid" style="max-width: 100%; and height: auto;" alt="Foto de auto" height="140px" onclick="window.location=`product-info.html`" style="cursor: pointer;" id="autoimg">'+ `</div>
+<br></div>
 `;
  
     }}

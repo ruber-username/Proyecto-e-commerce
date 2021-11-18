@@ -15,6 +15,7 @@
     <style type:"text/css"> BODY { background: repeating-linear-gradient(90deg, #bae1ff, #bae1ff 100px, #E6D1F2 100px, #E6D1F2 200px, #ffb3ba 200px, #ffb3ba 300px, #ffdfba 300px, #ffdfba 400px, #ffffba 400px, #ffffba 500px, #baffc9 500px, #baffc9 600px); height: 100%;} </style>
   </head>
   <body>
+
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -24,37 +25,37 @@
         <a class="py-2 d-none d-md-inline-block usuario_mail" href=""></a>
       </div>
     </nav>
+</div>
     <div class="container p-5">
       <div class="alert alert-danger rectangulo" style="position: relative; width:auto; top: 0;">
         <h4 class="alert-heading lista_de_productos">Lista de productos</h4>
 
-<input type="number" placeholder="Precio máximo" id="preciomax">
-<input type="number" placeholder="Precio mínimo" id="preciomin">
-<button id="filtrar" class="botonfilt">Filtrar!</button>
-<button id="borrar" class="botonfilt">Borrar</button>
-<button id="precio_asciende" class="botonfilt">Ver los más baratos</button>
-<button id="precio_desciende" class="botonfilt">Ver los más caros</button>
-<button id="relevancia_descendiente" class="botonfilt">Ver los más vendidos</button>
-<br>
-<input type="search" id="buscador_marca" placeholder="Nombre..."><br>
-<input type="search" id="buscador_desc" placeholder="Descripción...">
 
-<table class="tablilla">
-  <thead >
-    <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Costo</th>
-        <th>Recuento de venta</th>
-        <th>Foto del producto</th>
-    </tr>
-  </thead>
-  <tbody id="contenido">
-  </tbody>
-</table>
-</div>
-</div>
+        <div class="container">
+          <div class="row">
+            <div class="col-5-lg">
+              <input type="number" placeholder="Precio máximo" id="preciomax">
+              <input type="number" placeholder="Precio mínimo" id="preciomin">
+              <button id="filtrar" class="botonfilt">Filtrar!</button>
+              <button id="borrar" class="botonfilt">Borrar</button>
+            <br>
+              <button id="precio_asciende" class="botonfilt">Ver los más baratos</button>
+              <button id="precio_desciende" class="botonfilt">Ver los más caros</button>
+              <button id="relevancia_descendiente" class="botonfilt">Ver los más vendidos</button>
+            </div>
+          
+            <div class="col-lg"></div>
 
+              <div class="col-5-lg col-3-md">
+                <input type="search" id="buscador_marca" placeholder="Nombre..." size="10">
+                <input type="search" id="buscador_desc" placeholder="Descripción..." size="10">
+              </div>
+          </div>
+      
+          
+          <div class="container tablilla">
+              <div id="contenido" class="row"></div>
+</div>
 
     <footer class="text-muted bg-light">
       <div class="container">

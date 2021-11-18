@@ -47,10 +47,192 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0; background-color: rgb(52,58,64,1);">
+    <div class="alert alert-danger texto" role="alert" style="position: relative; width:auto; top: 0; background-color: rgb(52,58,64,1);">
 <div id="carrito"></div>
-    </div>
+    <!-- Comienzo del primer form-->
+
+        <form id="formulario">  
+ <h4>Dirección:</h4>
+ <div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm0">Calle:</span>
   </div>
+  <input  type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+</div>
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm1">Número de puerta: </span>
+  </div>
+  <input id="puerta" placeholder="Ej: 1234" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control numeros" pattern="[0-9]{4}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+</div>
+
+<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm2">Esquina: </span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text text-light bg-dark" for="inputGroupSelect01">País: </label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01" onchange="paises();">
+    <option selected>Uruguay</option>
+    <option value="argentina">Argentina</option>
+    <option value="bolivia">Bolivia</option>
+    <option value="brasil">Brasil</option>
+    <option value="chile">Chile</option>
+    <option value="colombia">Colombia</option>
+    <option value="costa rica">Costa Rica</option>
+    <option value="cuba">Cuba</option>
+    <option value="ecuador">Ecuador</option>
+    <option value="el salvador">El Salvador</option>
+    <option value="guatemala">Guatemala</option>
+    <option value="honduras">Honduras</option>
+    <option value="mexico">México</option>
+    <option value="nicaragua">Nicaragua</option>
+    <option value="panama">Panamá</option>
+    <option value="paraguay">Paraguay</option>
+    <option value="peru">Perú</option>
+    <option value="puerto rico">Puerto Rico</option>
+    <option value="rep dominicana">Rep. Dominicana</option>
+    <option value="venezuela">Venezuela</option>
+    <option value="otro">Otro</option>
+  </select>
+</div>
+
+<div id="otropais" style="display:none;">
+<div class="input-group input-group-sm mb-3" >
+  <div class="input-group-prepend">
+    <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm3">Especificar otro:</span>
+  </div>
+  <input type="text" id="otropais2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required disabled>
+
+</div></div>
+
+<h4>Tipo de envío:</h4>
+<div onchange="costoenvío()">
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" required>
+  <label class="custom-control-label" for="customRadio1">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio2">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio3">Standard (12-15 días) - Costo del 5% sobre el subtotal.</label>
+
+</div></div>
+          
+          
+            <p id="costos"></p>
+            <button type="button" class="btn btn-outline-warning " data-toggle="modal" style="border-radius: 24px" data-target=".bd-example-modal-lg">Método de pago</button>
+            <div class="form-check"></div> 
+              
+          
+           
+            <br><br>
+            <button type="submit" class="btn btn-outline-success el_boton">Comprar!</button>
+            <br><br>
+            <button type="button" class="btn btn-outline-danger el_boton">Cancelar compra</button>
+          
+        </form> 
+        <!--comienzo del form 2-->
+        
+        <form id="formulario2">
+
+    <div id="carrito2"></div>
+  </div>
+    <div class="modal fade bd-example-modal-lg" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input" 
+                onclick="document.getElementById('datosdetarjeta').style.display='block'; 
+                document.getElementById('numerocuenta').style.display='none';
+                nodisabledTarjeta();
+                document.getElementById('banco').disabled=true;" required>
+                <label class="custom-control-label" for="customRadio4"><h4>Tarjeta de crédito</h4></label>
+              </div> </div></div></div>
+
+              <div id="datosdetarjeta" style="display:none;">
+
+<div class="container">
+                <div class="row">
+                  <div class="col-6">
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm4">Número de tarjeta: </span>
+                </div>
+                <input type="text" placeholder="16 dígitos" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]{16}" class="form-control numeros" id="tarjeta1" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+              </div>
+                    <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm6">Número de cuenta: </span>
+                </div>
+                <input type="texto" placeholder="De 18 a 20 dígitos" pattern="[0-9]{18,20}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control numeros" id="tarjeta2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+              </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group input-group-sm mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm7">Código de seguridad: </span>
+                      </div>
+                      <input type="texto" placeholder="De 3 a 4 dígitos" pattern="[0-9]{3,4}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="form-control numeros" id="tarjeta3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm8">Fecha de vencimiento: </span>
+                </div>
+                <input type="month" class="form-control" id="tarjeta4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+              </div>
+            </div></div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input" onclick="
+                  document.getElementById('datosdetarjeta').style.display='none'; 
+                  document.getElementById('numerocuenta').style.display='block'; 
+                  document.getElementById('banco').disabled=false;
+                  disabledTarjeta()"
+                  required>
+                <label class="custom-control-label" for="customRadio5"><h4>Transferencia bancaria</h4></label>
+              </div></div></div></div>
+
+              <div id="numerocuenta" style="display:none;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6 input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text text-light bg-dark" id="inputGroup-sizing-sm9">Número de cuenta: </span>
+                    </div>
+                    <input type="texto" placeholder="De 18 a 20 dígitos" pattern="[0-9]{18,20}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="banco" class="form-control numeros" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+                  </div></div></div></div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
