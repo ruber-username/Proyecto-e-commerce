@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           total();
           borrar_e();
           fecha_minima();
+            costoenvío();
   }
 })
 });
@@ -39,11 +40,10 @@ carrito.unitCost = carrito.unitCost*40
       <div class="col-lg-3 info_final">
 
       <label for="customRange3">Cantidad a comprar:</label>
-      <input type="range" class="custom-range" min="1" max="10" id="customRange3${i}" value="${carrito.count}" oninput="subtotal(${carrito.unitCost}, ${i}); this.nextElementSibling.value = this.value">
+      <input type="range" class="custom-range" min="1" max="10" id="customRange3${i}" value="${carrito.count}" oninput="subtotal(${carrito.unitCost}, ${i}); costoenvío(); this.nextElementSibling.value = this.value">
       <output>${carrito.count}</output><br>
 
     Subtotal:<div class="subtotal" id="subt${i}">${carrito.unitCost*carrito.count}</div> UYU <br>
-    
       </div>
     </div>
 <br>
@@ -179,3 +179,5 @@ function borrar(i){
   fecha_minima();
   costoenvío();
 }
+
+
